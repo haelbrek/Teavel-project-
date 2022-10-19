@@ -1,0 +1,3 @@
+Notre site est fait pour les voyageurs qui ne savent pas quelle prochaine destination choisir.
+Le voyageur pourra nous indiquer jusqu’à 5 villes qu’il aime et on lui enverra 5 autres villes  qui pourraient lui plaire en fonction des villes qu’il nous a indiqué.
+Une fois que le site lui aura envoyé les 5 villes qu’il aura prédit, en dessous de chaqu’une des villes il y aura des informations sur : les vols (prix des billets, nombres d’heures de vol, compagnie de vol, etc…), les hotels (hotels qu’il y a dans la ville, prix, ect…), les activités et lieux à visiter(trouver des activités, prix de l’activité, ect…)
