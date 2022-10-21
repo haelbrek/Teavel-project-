@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100px;
+   
+}
+
+body{
+    background-image: url(../image/pexels-pixabay-314726.jpg);
+    background-size:100%;
+    opacity: 1;
+    
+}
+
+.fa-plane-departure{
+    font-size: 50px;
+}
+
+.container-fluid{
+    font-size: 30px;
+}
+
+.nav-item{
+    
+    margin-left: 300px;
+}
+
+.connexion{
+    font-size: 60px;
+    margin-left: 0px;
+}
