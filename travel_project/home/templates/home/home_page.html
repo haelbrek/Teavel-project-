@@ -2,5 +2,14 @@
 {% load static %}
 {% block content %}
 
-    <h1> Bonjour, bienvenue les voyageurs </h1>  
-    {% endblock content %}
+    <h1> Bonjour, bienvenue les voyageurs </h1> 
+    
+    <form action="" method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value = "envoyer" >
+        
+    </form>
+
+
+{% endblock content %}
