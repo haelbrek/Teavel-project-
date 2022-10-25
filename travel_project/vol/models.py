@@ -29,5 +29,11 @@ class Vols(models.Model):
         max_length=3,
         blank= False
     )
-
-    
+    nombre_enfant = models.CharField(
+        max_length=3,
+        blank= False
+    )
+    infant = models.CharField(
+        max_length=3,
+        blank= False
+    )
