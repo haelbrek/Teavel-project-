@@ -15,7 +15,7 @@ api_secret="GWuM8LybWntkcEnu"
 def vol_page(request):
      amadeus = Client(client_id=api_keys,
      client_secret = api_secret)
-     liste_des_billets = []
+     liste_des_billets=[]
      
      if request.method == "POST":
           
@@ -29,18 +29,14 @@ def vol_page(request):
                          originLocationCode=form.cleaned_data["depart"],
                          destinationLocationCode=form.cleaned_data["destination"],
                          departureDate=form.cleaned_data["date_depart"],
-                         returnDate= form.cleaned_data["date_arrive"],
-                         adults = form.cleaned_data["classe_vol"],
-                         children =form.cleaned_data["nombre_enfant"],
-                         infants = form.cleaned_data["infant"]
+                         returnDate=form.cleaned_data["date_arrive"],
+                         adults=form.cleaned_data["nombre_adult"],
+                         children=form.cleaned_data["nombre_enfant"],
+                         infants=form.cleaned_data['infant'],
                          )
 
 
                response = response.result
-
-
-               
-
 
                info_depart_aller = response["data"][0]["itineraries"][0]["segments"][0]["departure"]
                
@@ -58,33 +54,14 @@ def vol_page(request):
 
                heures_de_vol = response["data"][0]["itineraries"][0]["segments"][0]["duration"]
 
-               nom_de_la_compagnie = ""
-
-               billets_aller = [info_depart_aller, info_arrivee_aller]
-               billets_retour = [info_depart_retour, info_arrivee_retour]
-
-
-               for key, value in dico_compagnies.items():
-                    if compagnies_vols == key:
-                         nom_de_la_compagnie = value
-
-               
-
-
-               liste_des_billets.append(billets_aller)
-               liste_des_billets.append(billets_retour)
-               liste_des_billets.append(heures_de_vol)
-               liste_des_billets.append(prix_billets)
-               #    liste_des_billets.append(compagnies_vols)
-               liste_des_billets.append(nom_de_la_compagnie)
-
+               liste_des_billets=[info_depart_aller,info_arrivee_aller,info_depart_retour,info_arrivee_retour,prix_billets,compagnies_vols,heures_de_vol]
 
           else:
                print("un truc")
                print(form.errors)
 
                     
-          return render (request, 'vol/reponse_vol.html', context ={'form':form, 'liste_des_billetins' : liste_des_billets})
+          return render (request, 'vol/reponse_vol.html', context ={'form':form, 'liste_des_billets' : liste_des_billets[0]})
        
      elif request.method == "GET":
           form= forms.vols()

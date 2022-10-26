@@ -18,22 +18,22 @@ class Vols(models.Model):
         max_length=100,
         blank=False,
         null=False,
-    )  
+        )
     date_arrive = models.CharField(
         max_length=100,
         blank=False,
         null=False,
-    )  
+    )
     
-    classe_vol = models.CharField(
-        max_length=3,
-        blank= False
+    nombre_adult = models.PositiveIntegerField(
+        null=True, 
+        blank=True
     )
-    nombre_enfant = models.CharField(
-        max_length=3,
-        blank= False
+    nombre_enfant = models.PositiveIntegerField(
+        null=True, 
+        blank=True
     )
-    infant = models.CharField(
-        max_length=3,
-        blank= False
+    infant = models.PositiveIntegerField(
+        null=True, 
+        blank=True
     )
