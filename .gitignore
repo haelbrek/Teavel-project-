@@ -269,3 +269,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,django,python
+travel_project/travel_project/__pycache__/__init__.cpython-310.pyc
+travel_project/travel_project/__pycache__/settings.cpython-310.pyc
+travel_project/travel_project/__pycache__/urls.cpython-310.pyc
+travel_project/travel_project/__pycache__/wsgi.cpython-310.pyc
