@@ -61,7 +61,12 @@ def vol_page(request):
                print(form.errors)
 
                     
-          return render (request, 'vol/reponse_vol.html', context ={'form':form, 'liste_des_billets' : liste_des_billets[0]})
+          return render (request, 'vol/reponse_vol.html', context ={
+                                                                    'form':form, 
+                                                                    'liste_des_billets' : liste_des_billets[0]
+                                                                    }
+                         
+                                                           )
        
      elif request.method == "GET":
           form= forms.vols()
