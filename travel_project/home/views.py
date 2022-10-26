@@ -4,11 +4,12 @@ from . import forms
 from .forms import ApiPreferenceForm
 from requests import Session
 
-# Create your views here
-api_keys = "JwBcoLzEegwwTjRDAypurrSvQYQBtEhk"
-api_secret="GWuM8LybWntkcEnu"
+from dotenv import load_dotenv 
+load_dotenv()
+import os 
 
-
+api_keys = os.getenv("api_keys")
+api_secret=os.getenv("api_secret")
 
 
 def home_page(request):
@@ -46,7 +47,7 @@ def home_page(request):
                print(form.errors)
 
                     
-          return render (request, 'home/reponse_formulaire.html', context ={'form':form, 'liste_des_villes' : liste_des_villes})
+          return render (request, 'home/result_preference.html', context ={'form':form, 'liste_des_villes' : liste_des_villes})
        
      elif request.method == "GET":
           form= forms.ApiPreferenceForm()

@@ -1,34 +1,35 @@
 {% load static %}
 
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-header">
+    <div class="container-fluid container-header">
       <a class="navbar-brand" href="{% url 'home' %}"><i class="fa-sharp fa-solid fa-plane-departure"></i>AHD Travel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-
-          <li class="nav-item">
+          
+          <li class="nav-item nav-item-header">
             <a class="nav-link" href="{% url 'vol' %}">LES VOLS</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">A propos</a>
+            <a class="nav-link" href="{% url 'vol' %}">LES HOTELS</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}"><i class="fa-sharp fa-solid fa-address-card"></i>Nous contacter</a>
-          </li>         
 
+        
           
-          <li class="nav-item">
+          
+          <div class="connexion">
+          
+          <li class="nav-item connexion-item">
             <a class="navbar-brand" href="#">
               <i class="fa-solid fa-plane-lock connexion"></i>
                 se connecter
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item connexion-item">
             <a class="navbar-brand" href="#">
               <i class="fa-solid fa-plane-lock connexion"></i>
                 s'incrire

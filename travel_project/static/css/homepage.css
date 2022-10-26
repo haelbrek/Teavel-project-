@@ -1,0 +1,14 @@
+
+
+.ville{
+    font-size: 50px;
+    flex-direction: row;
+    display: inline-block;
+    min-width: 450px;
+
+}
+
+.ville_preference{
+    text-align: center;
+}
+ 
