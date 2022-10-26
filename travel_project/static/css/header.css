@@ -1,0 +1,43 @@
+.fa-plane-departure{
+    font-size: 130px;
+    
+}
+
+.container-header{
+    font-size: 30px;
+    border-bottom: 50px; 
+    display: flex; 
+
+}
+
+.nav-item-header{
+    
+    margin-left: 200px;
+    
+}
+
+.connexion{
+    font-size: 60px;
+    margin-left: 0px;
+    align-items: flex-end;
+    
+    
+ 
+}
+
+.connexion-item{
+    display: flex;
+    align-items: flex-end;
+   
+    
+
+}
+
+.navbar-header{
+    border-bottom: 3px solid darkslategray;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+
+
+}
