@@ -51,6 +51,6 @@ def home_page(request):
        
      elif request.method == "GET":
           form= forms.ApiPreferenceForm()
-          return render(request, 'home/home_page.html', context= {"form" :form} )
+          return render(request, 'home/home_page.html', context= {"form"    :form} )
 
 
