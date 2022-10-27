@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+{% if form.errors %}
+<p><i class="fa-solid fa-plane-circle-exclamation"></i>Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez réessayer.<i class="fa-solid fa-plane-circle-exclamation"></i></p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Votre compte n'a accés pas à cette page.  </p>
+    {% else %}
+    <p>S'il vous plait connectez-vous pour voir cette page</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+    <body class="text-center container">
+    
+        <main class="form-signin w-100 m-auto">
+          <form>
+            <img class="mb-4" src="{% static 'image/logo2.png' %}" alt=""   width="150" height="150">
+            
+        
+            <div class="form-floating">
+                {{form.username|add_class:"form-control"}}
+              {% comment %} <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> {% endcomment %}
+              <label for="{{form.username.id_for_label}}">Identifiant</label>
+            </div>
+            <div class="form-floating">
+                {{form.password|add_class:"form-control"}}
+                <label for="{{form.password.id_for_label}}">Mot de passe</label>
+            </div>
+        
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Se rappeler de moi.
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Connectez vous</button>
+           
+          </form>
+        </main>
+        
+        
+            
+          </body>
+<input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{# Assumes you set up the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Mot de passe oublié</a></p>
+
+{% endblock %}
