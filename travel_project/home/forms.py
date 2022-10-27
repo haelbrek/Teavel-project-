@@ -14,7 +14,7 @@ class ApiPreferenceForm(forms.ModelForm):
               'ville': TextInput(attrs={
                 
                
-                'placeholder' : 'Ville que vous aimez'
+                'placeholder' : 'ex : MAD,PAR,LON'
         })
         }
    
