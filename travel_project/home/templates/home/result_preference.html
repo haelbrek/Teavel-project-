@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static '/css/homepage.css' %}">
+
+{% block content %}
+
+
+ 
+    <h2>Voici les villes qui pourrait vous intéresser</h2>
+<ul class="ville_preference">
+{% for ville in liste_des_villes %}
+    
+   <li class="ville"> {{ville}}</li>
+
+{% endfor %}
+
+<ul>
+{% endblock content %}

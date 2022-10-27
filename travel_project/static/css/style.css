@@ -1,0 +1,39 @@
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../image/pexels-pixabay-314726.jpg);
+    background-size:100%;
+    opacity: 1;
+    
+    
+}
+main{
+    flex-grow: 1;
+}
+
+
+.formulaire{
+    font-size: 40PX;
+    margin-top: 0px;
+    text-align: center;
+}
+
+h2{
+    color: whitesmoke;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    
+    font-size: 120PX;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+
+}
