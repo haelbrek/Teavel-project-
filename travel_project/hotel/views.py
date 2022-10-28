@@ -25,8 +25,8 @@ def hotel_page(request):
 
                response_hotels = amadeus.reference_data.locations.hotels.by_city.get(
                         cityCode = form.cleaned_data ["ville"],
-                        ratings = form.cleaned_data["nombre d'etoiles"],
-                        amenities = form.cleaned_data["services et equipements"]
+                        ratings = form.cleaned_data["nombre_etoiles"],
+                        amenities = form.cleaned_data["services_et_equipements"]
                )
                response_hotels = response_hotels.result
                ville_hotel = response_hotels["data"][0]["iataCode"]
@@ -44,7 +44,7 @@ def hotel_page(request):
         else:
             print(form.errors)
 
-        return render (request, 'hotel/reponse_hotel.html', context ={'form':form,})
+        return render (request, 'hotel/reponse_hotel.html', context ={'form':form, 'liste_des_hotels': liste_des_hotels})
 
     elif request.method == "GET":
           form= forms.hotels()
