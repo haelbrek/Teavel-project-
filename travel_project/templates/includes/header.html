@@ -25,12 +25,13 @@
           <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{request.path}}">log out</a>
           {%else%}
           <div class="connexion">
-          
-          <li class="nav-item connexion-item">
-            <a class="navbar-brand" href="{% url 'login' %}">
-              <i class="fa-solid fa-plane-circle-xmark connexion"></i>
-                se connecter
-            </a>
+          {% if user.is_authenticated %}
+            <li class="nav-item connexion-item">
+              <a class="navbar-brand" href="{% url 'login' %}">
+                <i class="fa-solid fa-plane-circle-xmark connexion"></i>
+                  {{user.get_username}}
+              </a>
+              {% endif %}
           </li>
           <li class="nav-item connexion-item">
             <a class="navbar-brand" href="#">
