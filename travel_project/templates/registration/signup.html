@@ -11,6 +11,11 @@
         </div>
 
         <div class="mb-4">
+          <label for="{{form.email.id_for_label}}" class="form-label">Email</label>
+          {{form.email|add_class:"form-control"}}
+        </div>
+
+        <div class="mb-4">
           <label for="{{form.password1.id_for_label}}" class="form-label">Password:</label> 
           {{form.password1|add_class:"form-control"}}          
         </div>
@@ -31,6 +36,8 @@
 
     </form> 
 </div>
+
+
 
 
 {% endblock content %}
