@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'home',
     'vol',
     'divers',
-    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
