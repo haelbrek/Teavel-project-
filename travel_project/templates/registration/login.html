@@ -5,7 +5,7 @@
 {% block content %}
 
 {% if form.errors %}
-<p><i class="fa-solid fa-plane-circle-exclamation"></i>Votre nom d'utilisateur et votre mot de passe ne correspondent pas. Veuillez réessayer.<i class="fa-solid fa-plane-circle-exclamation"></i></p>
+<p><i class="fa-solid fa-plane-circle-exclamation"></i>Votre nom d'utilisateur ou votre mot de passe ne correspondent pas. Veuillez réessayer.<i class="fa-solid fa-plane-circle-exclamation"></i></p>
 {% endif %}
 
 {% if next %}
@@ -19,10 +19,10 @@
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
 
-    <body class="text-center container">
+    <div class="text-center container">
     
-        <main class="form-signin w-100 m-auto">
-          <form>
+        <div class="form-signin w-100 m-auto">
+          
             <img class="mb-4" src="{% static 'image/logo2.png' %}" alt=""   width="150" height="150">
             
         
@@ -44,11 +44,11 @@
             <button class="w-100 btn btn-lg btn-primary" type="submit">Connectez vous</button>
            
           </form>
-        </main>
+        </div>
         
         
             
-          </body>
+      </div>
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 
