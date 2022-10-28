@@ -1,6 +1,6 @@
 
 
-body{
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,9 +10,9 @@ body{
     
     
 }
-main{
+/*main{
     flex-grow: 1;
-}
+}*/
 
 
 .formulaire{

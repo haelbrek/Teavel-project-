@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'home',
     'vol',
+    'hotel',
     'divers',
     'django.contrib.admin',
     'django.contrib.auth',
