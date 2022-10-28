@@ -19,13 +19,16 @@
           </li>
 
         
-          
-          
+        {% if user.is_authentificated %}
+          <span class="navbar-text"><i class="fa-regular fa-plane-circle-check">{{user.get_username}}</i></span>
+
+          <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}?next={{request.path}}">log out</a>
+          {%else%}
           <div class="connexion">
           
           <li class="nav-item connexion-item">
-            <a class="navbar-brand" href="#">
-              <i class="fa-solid fa-plane-lock connexion"></i>
+            <a class="navbar-brand" href="{% url 'login' %}">
+              <i class="fa-solid fa-plane-circle-xmark connexion"></i>
                 se connecter
             </a>
           </li>
@@ -36,6 +39,8 @@
             </a>
           </li>
         </div>
+        {% endif %}
+        {% endif %}
         </ul>
       </div>
     </div>
