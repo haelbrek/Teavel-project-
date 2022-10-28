@@ -9,3 +9,5 @@ class Hotels(models.Model):
         blank=False,
         null=False,
     )
+
+    
