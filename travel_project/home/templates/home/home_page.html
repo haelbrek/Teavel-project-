@@ -12,15 +12,14 @@
         {% csrf_token %}
         <div>
         <label for="ville">Ville</label>
-        
-        
-        
         {{ form.ville}}
         </div>
+
         <div>
         <label for="pays_de_depart"> Pays de départ</label>
         {{form.pays_de_depart}}
         </div>
+        
         <div>
         <input type='submit' value = "envoyer" >
         </div>

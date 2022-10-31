@@ -1,10 +1,12 @@
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #c6c6c6;
-  color: white;
-  text-align: center;
-  height: 60px;
+/* footer{
+	background-color: #333333;
+        position: absolute;
+	bottom: -980px;
+	left:0px;
+	right: 0px;
+	width: 100%;
 }
+.container{
+	position: relative;
+	left: 120px;
+} */

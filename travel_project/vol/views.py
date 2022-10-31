@@ -62,11 +62,11 @@ def vol_page(request):
                heures_de_vol = response["data"][0]["itineraries"][0]["segments"][0]["duration"]
 
                liste_des_billets=[info_depart_aller,info_arrivee_aller,info_depart_retour,info_arrivee_retour,prix_billets,compagnies_vols,heures_de_vol]
-
+               print(liste_des_billets)
           else:
                print("un truc")
                print(form.errors)
-
+               print("error")
                     
           return render (request, 'vol/reponse_vol.html', context ={
                                                                     'form':form, 
