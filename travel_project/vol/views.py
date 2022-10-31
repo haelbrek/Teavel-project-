@@ -1,17 +1,21 @@
 
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from amadeus import Client, ResponseError, Location
 from . import forms
 from .forms import vols
 from requests import Session
 
-# Create your views here
-api_keys = "JwBcoLzEegwwTjRDAypurrSvQYQBtEhk"
-api_secret="GWuM8LybWntkcEnu"
+from dotenv import load_dotenv 
+load_dotenv()
+import os 
+
+api_keys = os.getenv("api_keys")
+api_secret=os.getenv("api_secret")
 
 
 
-
+@login_required
 def vol_page(request):
      amadeus = Client(client_id=api_keys,
      client_secret = api_secret)
@@ -38,6 +42,9 @@ def vol_page(request):
 
                response = response.result
 
+              
+               
+
                info_depart_aller = response["data"][0]["itineraries"][0]["segments"][0]["departure"]
                
                info_arrivee_aller = response["data"][0]["itineraries"][0]["segments"][0]["arrival"]
@@ -63,7 +70,7 @@ def vol_page(request):
                     
           return render (request, 'vol/reponse_vol.html', context ={
                                                                     'form':form, 
-                                                                    'liste_des_billets' : liste_des_billets[0]
+                                                                    'liste_des_billets' : liste_des_billets
                                                                     }
                          
                                                            )
