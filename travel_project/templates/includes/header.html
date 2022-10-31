@@ -25,7 +25,7 @@
             <li class="nav-item connexion-item">
               {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'login' %}">
-                  <i class="fa-regular fa-plane-circle-check"></i>
+                  <i class="fa-solid fa-plane-circle-check connexion"></i>
                   <span class= "navbar-text"> {{user.get_username}} </span> 
                 </a>
               {%else%}
@@ -37,7 +37,7 @@
             </li>
             <li class="nav-item connexion-item">
               {% if user.is_authenticated %}
-                 <a class= "btn btn-sm btn-outline-secondary" href="{% url 'logout'%}?next={{request.path}}">log out</a>
+                 <a class= "btn btn-sm btn-outline-secondary" href="{% url 'logout'%}">log out</a>
               {% else %}
                 <a class="navbar-brand" href="#">
                   <i class="fa-solid fa-plane-lock connexion"></i>
