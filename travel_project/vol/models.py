@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 
@@ -27,13 +28,16 @@ class Vols(models.Model):
     
     nombre_adult = models.PositiveIntegerField(
         null=True, 
-        blank=True
+        blank=True, 
+        default= 0
     )
     nombre_enfant = models.PositiveIntegerField(
         null=True, 
-        blank=True
+        blank=True,
+        default= 0
     )
     infant = models.PositiveIntegerField(
         null=True, 
-        blank=True
+        blank=True,
+        default= 0
     )
