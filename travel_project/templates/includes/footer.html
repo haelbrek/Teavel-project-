@@ -1,8 +1,14 @@
 
 {% load static %}
 
+<<<<<<< HEAD
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center ">
+=======
+<<<<<<< Updated upstream
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+>>>>>>> Adeline
 
     <p class="col-md-4 mb-0 text-muted">&copy; 2022 AHD Travel</p>
 
@@ -11,11 +17,18 @@
     </a>
 
     <ul class="nav col-md-4 justify-content-end liste-footer">
+=======
+
+  <footer style="display: flex; justify-content: space-between; align-items: center; padding: 2rem">
+    <p style="display: flex; align-items: center; margin: 0">2022 AHD Travel</p>
+
+    <ul class="nav liste-footer">
+>>>>>>> Stashed changes
       <li class="nav-item nav-item-footer"><a href="{% url 'home' %}" class="nav-link px-2 text-muted ">Home</a></li>
       <li class="nav-item"><a href="{% url 'vol' %}" class="nav-link px-2 text-muted ">Vol</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted ">Hotel</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted ">About</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted ">Nous contacter</a></li>
+      <li class="nav-item"><a href="{% url 'hotel' %}" class="nav-link px-2 text-muted ">Hotel</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}" class="nav-link px-2 text-muted ">About</a></li>
+      <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-muted ">Nous contacter</a></li>
     </ul>
   </footer>
   

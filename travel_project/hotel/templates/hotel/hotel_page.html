@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block content %}
 
-    <h1> Bonjour, Choisissez votre hotel </h1>
+    <h2> Des idées d'hotels </h2>
+
+    <div class="container">
 
     <form action="" method="post">
 
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type='submit' value = "envoyer" >
+            <div class="form-floating">
+            <label for="ville">Ville</label>
+            {{form.ville|add_class:"form-control"}}
+            </div>
+    
+            <div class="form-floating">
+            <label for="nombre_etoiles"> Nombre d'étoiles</label>
+            {{form.nombre_etoiles|add_class:"form-control"}}
+            </div>
+
+            <div class="form-floating">
+            <label for="services_equipements">Services</label>
+            {{ form.services_equipements|add_class:"form-control"}}
+            </div>
+
+            
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Rechercher</button>
+              
+            
+       
 
     </form> 
+</div>
+
 
 {% endblock content %}

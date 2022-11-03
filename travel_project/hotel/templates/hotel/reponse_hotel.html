@@ -4,6 +4,12 @@
 <div> 
     <h2> Les Hotels </h2>
 
-{{liste_des_hotels}}
-
+    <ul >
+    {% for hotel in liste_des_hotels %}
+        
+       <li > {{hotel}}</li>
+    
+    {% endfor %}
+    
+    <ul>
 {% endblock content %}

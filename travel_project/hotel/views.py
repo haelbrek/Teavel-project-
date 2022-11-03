@@ -25,26 +25,33 @@ def hotel_page(request):
 
                response_hotels = amadeus.reference_data.locations.hotels.by_city.get(
                         cityCode = form.cleaned_data ["ville"],
-                        ratings = form.cleaned_data["nombre d'etoiles"],
-                        amenities = form.cleaned_data["services et equipements"]
+                        ratings = form.cleaned_data["nombre_etoiles"],
+                        amenities = form.cleaned_data["services_equipements"]
                )
+
                response_hotels = response_hotels.result
-               ville_hotel = response_hotels["data"][0]["iataCode"]
-               nom_hotel = response_hotels["data"][0]["name"]
-               etoile_hotel = response_hotels["data"][0]["rating"]
-               hotel_id = response_hotels["data"][0]["hotelId"]
-               services_equipements = response_hotels["data"][0]["amenities"]
-               
-               liste_des_hotels.append(ville_hotel)
-               liste_des_hotels.append(nom_hotel)
-               liste_des_hotels.append(etoile_hotel)
-               liste_des_hotels.append(hotel_id)
-               liste_des_hotels.append(services_equipements)
+               if len(response_hotels["data"]) >=3:
+                    for i in range (3):
+                        nom_hotel = response_hotels["data"][i]["name"]
+                        liste_des_hotels.append(nom_hotel)
+               elif len(response_hotels["data"]) == 2:
+                    for i in range (2):
+                        nom_hotel = response_hotels["data"][i]["name"]
+                        liste_des_hotels.append(nom_hotel)
+               elif len(response_hotels["data"]) == 1:
+                    for i in range (1):
+                        nom_hotel = response_hotels["data"][i]["name"]
+                        liste_des_hotels.append(nom_hotel)
+               elif len(response_hotels["data"]) == 0:
+                    print("Il n'y a aucun résultat qui correspond à votre recherche")
+
+
+
     
         else:
             print(form.errors)
 
-        return render (request, 'hotel/reponse_hotel.html', context ={'form':form,})
+        return render (request, 'hotel/reponse_hotel.html', context ={'form':form,'liste_des_hotels':liste_des_hotels})
 
     elif request.method == "GET":
           form= forms.hotels()
