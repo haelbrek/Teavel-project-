@@ -35,8 +35,9 @@ class ApiPreferenceModel(models.Model):
     pays_de_depart = models.CharField(
         max_length=3,
         blank= False,
+        null= True,
         choices= PAYS_DE_DEPART,
-        default = FRANCE
+        
     )
 
     

@@ -1,3 +1,4 @@
+from email.policy import default
 from unittest.util import _MAX_LENGTH
 from django.db import models
 
@@ -9,17 +10,55 @@ class Hotels(models.Model):
         blank=False,
         null=False,
     )
-
-    etoile=models.PositiveIntegerField(
-        null=True, 
-        blank=True
-    )
-    
-    # List_service = ["SWIMMING_POOL", "SPA", "FITNESS_CENTER", "AIR_CONDITIONING", "RESTAURANT", "PARKING", "PETS_ALLOWED", "AIRPORT_SHUTTLE", "BUSINESS_CENTER", "DISABLED_FACILITIES", "WIFI", "MEETING_ROOMS", "NO_KID_ALLOWED", "TENNIS", "GOLF", "KITCHEN", "ANIMAL_WATCHING", "BABY-SITTING", "BEACH", "CASINO", "JACUZZI", "SAUNA", "SOLARIUM", "MASSAGE", "VALET_PARKING", "BAR", "LOUNGE", "KIDS_WELCOME", "NO_PORN_FILMS", "MINIBAR", "TELEVISION","WI-FI_IN_ROOM", "ROOM_SERVICE", "GUARDED_PARKG", "SERV_SPEC_MENU"
-    # ]
+    SWIMMING_POOL= 'SWIMMING_POOL'
+    SPA = 'SPA'
+    RESTAURANT = "RESTAURANT"
+    PETS_ALLOWED = 'PETS_ALLOWED'
+    BEACH = 'BEACH'
+    FITNESS_CENTER = 'FITNESS_CENTER'
+    AIRPORT_SHUTTLE = 'AIRPORT_SHUTTLE'
+    MASSAGE = ' MASSAGE'
+    BAR_LOUNGE = 'BAR or LOUNGE'
+    ROOM_SERVICE = 'ROOM_SERVICE'
+    SERVICES = [
+        (SWIMMING_POOL, 'Piscine'),
+        (SPA, 'SPA'),
+        (RESTAURANT, 'Restaurant'),
+        (PETS_ALLOWED, 'Animaux autorisés'),
+        (BEACH, 'Plage'),
+        (FITNESS_CENTER, 'Salle de sport'),
+        (AIRPORT_SHUTTLE, 'navette aéroport'),
+        (MASSAGE, 'Massage'),
+        (BAR_LOUNGE, 'Bar'),
+        (ROOM_SERVICE, 'Room Service')
+    ]
     services_equipements = models.CharField(
-        max_length=100,
+        max_length=150,
         blank= False,
-        # choices= List_service,
-        # default = "SWIMMING_POOL"
+        null= True,
+        choices= SERVICES,
+        
     )
+
+    ETOILE_1= '1'
+    ETOILE_2 = '2'
+    ETOILE_3 = "3"
+    ETOILE_4 = '4'
+    ETOILE_5 = '5'
+    SERVICES = [
+        (ETOILE_1, '1'),
+        (ETOILE_2, '2'),
+        (ETOILE_3, '3'),
+        (ETOILE_4, '4'),
+        (ETOILE_5, '5'),
+
+    ]
+    nombre_etoiles = models.CharField(
+        max_length=150,
+        blank= False,
+        null= True,
+        choices= SERVICES,
+        
+    )
+
+    

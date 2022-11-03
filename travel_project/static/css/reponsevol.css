@@ -33,6 +33,13 @@
     user-select: none;
   }
 
+<<<<<<< HEAD
 
 
 
+=======
+.juan{
+  display: flex;
+  flex-direction: row;
+}
+>>>>>>> Adeline
