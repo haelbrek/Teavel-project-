@@ -2,32 +2,31 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
 
     <h2> Bienvenue les voyageurs </h2> 
     <p> Veuillez entre vos villes préférés (5 maximun séparé par une virgule ) et nous vous trouverons votre prochain voyage ! </p>
-    <div class="formulaire">
+    <div class="container">
     <form action="" method="post" >
         {% csrf_token %}
-        <div>
+        
+        <div class="form-floating">
         <label for="ville">Ville</label>
-        
-        
-        
-        {{ form.ville}}
+        {{ form.ville|add_class:"form-control"}}
         </div>
-        <div>
-        <label for="pays_de_depart"> Pays de départ</label>
-        {{form.pays_de_depart}}
+
+        <div class="form-floating">
+        <label for="ville">Pays de départ</label>
+        {{form.pays_de_depart|add_class:"form-control"}}
         </div>
-        <div>
-        <input type='submit' value = "envoyer" >
-        </div>
+   
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Rechercher</button>
     
         
     </form>
-    <div>
+</div>
         
 
 

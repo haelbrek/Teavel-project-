@@ -70,12 +70,14 @@ def vol_page(request):
 
 
                     info_depart_aller_date = response["data"][i]["itineraries"][0]["segments"][0]["departure"]["at"]
+                    info_depart_aller_date=info_depart_aller_date.replace("T"," à ")
                     liste_info_depart_aller_date.append(info_depart_aller_date)
 
                     info_arrivee_aller_aeroport = response["data"][i]["itineraries"][0]["segments"][0]["arrival"]["iataCode"]
                     liste_info_arrivee_aller_aeroport.append(info_arrivee_aller_aeroport)
 
                     info_arrivee_aller_date = response["data"][i]["itineraries"][0]["segments"][0]["arrival"]["at"]
+                    info_arrivee_aller_date=info_arrivee_aller_date.replace("T"," à ")
                     liste_info_arrivee_aller_date.append(info_arrivee_aller_date)
 
 
@@ -85,6 +87,7 @@ def vol_page(request):
 
                     
                     info_depart_retour_date = response["data"][i]["itineraries"][1]["segments"][0]["departure"]["at"]
+                    info_depart_retour_date=info_depart_retour_date.replace("T"," à ")
                     liste_info_depart_retour_date.append(info_depart_retour_date)
 
                     
@@ -92,6 +95,7 @@ def vol_page(request):
                     liste_info_arrivee_retour_aeroport.append(info_arrivee_retour_aeroport)
                     
                     info_arrivee_retour_date = response["data"][i]["itineraries"][1]["segments"][0]["arrival"]["at"]
+                    info_arrivee_retour_date=info_arrivee_retour_date.replace("T"," à ")
                     liste_info_arrivee_retour_date.append(info_arrivee_retour_date)
 
                     prix_billets = response["data"][i]["price"]["total"]
@@ -112,9 +116,11 @@ def vol_page(request):
                     liste_Escale_retour.append(Escale_retour)
 
                     heures_de_vol_aller = response["data"][i]["itineraries"][0]["segments"][0]["duration"]
+                    heures_de_vol_aller=heures_de_vol_aller[2:-1]
                     liste_heures_de_vol_aller.append(heures_de_vol_aller)
 
                     heures_de_vol_retour = response["data"][i]["itineraries"][1]["segments"][0]["duration"]
+                    heures_de_vol_aller=heures_de_vol_aller[2:-1]
                     liste_heures_de_vol_retour.append(heures_de_vol_retour)
 
 
