@@ -43,7 +43,7 @@ def home_page(request):
                # session["liste_des_iata"] = liste_des_iata
 
           else:
-               print("un truc")
+               #print("un truc")
                print(form.errors)
 
                     
