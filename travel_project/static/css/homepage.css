@@ -12,3 +12,17 @@
     text-align: center;
 }
  
+.circle{
+    display: inline-block;
+    height:209;
+    width: 432;
+}
+
+city{
+    display: flex;
+}
+
+text{
+    color: white;
+}
+ 

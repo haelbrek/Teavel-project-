@@ -3,13 +3,17 @@
 {% block content %}
 <div> 
     <h2> Les Hotels </h2>
+    <div class="container">
+
+   <p> Voici les hotels de la ville demandé avec les services et les etoiles demandés </p>
 
     <ul >
     {% for hotel in liste_des_hotels %}
         
-       <li > {{hotel}}</li>
+       <li class="display-3"> {{hotel}}</li>
     
     {% endfor %}
     
     <ul>
+    </div>
 {% endblock content %}

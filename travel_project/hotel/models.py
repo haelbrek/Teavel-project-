@@ -37,6 +37,7 @@ class Hotels(models.Model):
         blank= False,
         null= True,
         choices= SERVICES,
+        default= SPA
         
     )
 
@@ -58,7 +59,7 @@ class Hotels(models.Model):
         blank= False,
         null= True,
         choices= SERVICES,
-        
+        default=1
     )
 
     

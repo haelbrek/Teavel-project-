@@ -5,17 +5,8 @@ main{
     flex-direction: column;
     justify-content: center;
     background-image: url(../image/pexels-pixabay-314726.jpg);
-<<<<<<< Updated upstream
-    background-size:100%;
-    opacity: 1;
-    
-    
-}
-/*main{
-=======
     background: 100;
     opacity : 1; 
->>>>>>> Stashed changes
     flex-grow: 1;
 }
 body{
@@ -46,14 +37,13 @@ p{
     font-size: 30px;
     margin-top: 100px;
 
-<<<<<<< Updated upstream
-=======
 }
 
 footer{
+    /* background-color: #c6c6c6; */
 	background-color: hwb(0 20% 80%);
+    color: white;
 	left:0px;
 	right: 0px;
 	width: 100%;
->>>>>>> Stashed changes
 }

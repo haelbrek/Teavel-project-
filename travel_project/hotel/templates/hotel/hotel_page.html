@@ -11,18 +11,19 @@
 
         {% csrf_token %}
             <div class="form-floating">
-            <label for="ville">Ville</label>
             {{form.ville|add_class:"form-control"}}
+            <label for="{{form.ville.id_for_label}}"> Ville  </label>
             </div>
     
             <div class="form-floating">
-            <label for="nombre_etoiles"> Nombre d'étoiles</label>
+            
             {{form.nombre_etoiles|add_class:"form-control"}}
+            <label for="{{form.nombre_etoiles.id_for_label}}"> Nombre d'étoiles  </label>
             </div>
 
             <div class="form-floating">
-            <label for="services_equipements">Services</label>
             {{ form.services_equipements|add_class:"form-control"}}
+            <label for="{{form.services_equipements.id_for_label}}"> Services </label>
             </div>
 
             
