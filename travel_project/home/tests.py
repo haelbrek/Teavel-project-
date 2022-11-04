@@ -7,10 +7,10 @@ class ApiPreferenceModelTestCase(TestCase):
     def setUp(self):
         ApiPreferenceModel.objects.create(ville="MAD")
         
-
     def test_Name_ville(self):
         MAD = ApiPreferenceModel.objects.get(ville="MAD")
         self.assertIsInstance(MAD.ville,str)
+        
 class ApiPreferenceViewsTestCase(TestCase):
         def setUp(self):
              self.client= Client()
@@ -18,18 +18,12 @@ class ApiPreferenceViewsTestCase(TestCase):
              
              
         def test_home_page_get(self):
-        
             response = self.client.get(self.list_url)
             self.assertEquals(response.status_code, 200)
             self.assertTemplateUsed(response, 'home/home_page.html')
             
             
         def test_home_page_post(self):
-            # category.objects.create(
-            #     project=self.project1,
-            #     name='development'
-            #     )
-        
             response = self.client.post(
                 self.list_url,
                 )                     
