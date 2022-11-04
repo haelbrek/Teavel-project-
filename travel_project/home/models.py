@@ -37,6 +37,7 @@ class ApiPreferenceModel(models.Model):
         blank= False,
         null= True,
         choices= PAYS_DE_DEPART,
+        default = FRANCE
         
     )
 

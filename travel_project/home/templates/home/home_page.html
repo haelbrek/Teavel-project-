@@ -13,13 +13,14 @@
         {% csrf_token %}
         
         <div class="form-floating">
-        <label for="ville">Ville</label>
+      
         {{ form.ville|add_class:"form-control"}}
+        <label for="{{form.ville.id_for_label}}"> Ville  </label>
         </div>
 
         <div class="form-floating">
-        <label for="ville">Pays de départ</label>
         {{form.pays_de_depart|add_class:"form-control"}}
+        <label for="{{form.pays_de_depart.id_for_label}}"> Pays de départ  </label>
         </div>
    
         <button class="w-100 btn btn-lg btn-primary" type="submit">Rechercher</button>
