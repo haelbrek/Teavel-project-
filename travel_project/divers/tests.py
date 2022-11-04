@@ -17,8 +17,6 @@ class diversViewsTestCase(TestCase):
         def test_contact_page(self):
             self.assertEquals(resolve(self.contact_url).func,contact_page)
         
-        def test_signup_page(self):
-            self.assertEquals(resolve(self.signup_url).func,SignupPage)
         
         
             

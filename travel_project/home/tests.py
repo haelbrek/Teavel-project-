@@ -1,15 +1,19 @@
 from django.test import TestCase, Client
 from home.models import ApiPreferenceModel 
-from django.urls import reverse
-from django.db.models import QuerySet 
+from django.urls import reverse , resolve
+
 
 class ApiPreferenceModelTestCase(TestCase):
     def setUp(self):
-        ApiPreferenceModel.objects.create(ville="MAD")
+        ApiPreferenceModel.objects.create(ville="Paris")
+        ApiPreferenceModel.objects.create(pays_de_depart="France")
+    
         
     def test_Name_ville(self):
-        MAD = ApiPreferenceModel.objects.get(ville="MAD")
-        self.assertIsInstance(MAD.ville,str)
+        Paris = ApiPreferenceModel.objects.get(ville="Paris")
+        France= ApiPreferenceModel.objects.get(pays_de_depart="France")
+        self.assertIsInstance(Paris.ville,str)
+        self.assertIsInstance(France.pays_de_depart,str)
         
 class ApiPreferenceViewsTestCase(TestCase):
         def setUp(self):
